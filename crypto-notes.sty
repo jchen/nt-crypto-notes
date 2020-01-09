@@ -1,0 +1,129 @@
+%% Class declaration
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{crypto-notes}
+
+%% Input and layout
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+\RequirePackage[intlimits]{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{textcomp}
+\RequirePackage[utf8]{inputenc}
+%\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{pxfonts}
+% \RequirePackage{tgpagella}
+% \RequirePackage{utopia}
+\RequirePackage{eulerpx}
+% \RequirePackage{fontspec}
+% \setmainfont{Georgia}
+% \RequirePackage{euler}
+% \RequirePackage{mathpazo} % text font is mathpazo
+% \RequirePackage[euler-digits,euler-hat-accent]{eulervm} % math font: AMS Euler
+% \RequirePackage[notext, lighttext, intlimits]{kpfonts} % math font is kp-fonts
+\RequirePackage{microtype} % optimizes spacing for text, breaks TexpadTeX
+\RequirePackage{geometry}
+\geometry{ % defines page margins and spacing
+  top=0.95in,
+  inner=1.3in,
+  outer=1.3in,
+  bottom=1.3in,
+  headsep=2ex,
+  foot=36pt}
+
+\RequirePackage[bottom]{footmisc}
+
+\RequirePackage{fancyhdr}
+% \pagestyle{myheadings}
+% \pagestyle{fancy}
+\fancyhf{}
+\title{MA671 - Topics, Number Theory and Cryptography}
+% \lhead{\small Jiahua Chen}
+% \rhead{\small \@title}
+% \cfoot{\small{\textsc{p. \thepage}}}
+
+\RequirePackage{tkz-euclide,tikz}
+\usetkzobj{all}
+\RequirePackage{enumerate}
+\RequirePackage{soul}
+\RequirePackage{parskip}
+\RequirePackage{framed}
+\RequirePackage{xcolor}
+
+\newcommand{\bm}{\textbf}
+
+\renewcommand{\arraystretch}{0.8}
+\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+\newcommand{\Df}{\bm{Df}}
+\newcommand{\Jf}{\bm{Jf}}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\V}[1]{\ensuremath{\Vec{#1}}}
+\newcommand{\Point}[1]{\ensuremath{\begin{pmatrix} #1 \end{pmatrix}}}
+\newcommand{\mtrx}[1]{\ensuremath{\begin{bmatrix} #1 \end{bmatrix}}}
+\newcommand{\Set}[1]{\ensuremath{\left\{ #1 \right\}}}
+\newcommand{\System}[1]{\ensuremath{\left( #1 \right)}}
+\newcommand{\example}{\noindent \textbf{Example: } }
+\newcommand{\Exercise}{\noindent \textbf{Exercise: } }
+\newcommand{\Def}{\ensuremath{\overset{\text{def}}{=}}}
+
+
+\newcommand{\createsystem}[2]{\ensuremath{\left(\Vec{#1_1},\dots,\Vec{#1_{#2}}\right)}}
+\newcommand{\answer}[1]{\textit{Answer: }\boxed{\text{#1}}}
+%\newcommand{\lessondate}[1]{\refstepcounter{lesson} \hfill #1}
+\newenvironment{lessondate}[1][]{\begingroup \date{#1} \hfill}{\endgroup}
+\newcommand{\Topic}[1]{\ul{\textbf{#1}}}
+\newcommand{\Mathematica}[3]{\includegraphics{graphs/#1/gr_gr#2.eps}
+\begin{center}\includegraphics[scale=0.7]{graphs/#1/gr_gr#3.eps}\end{center}}
+
+\newcounter{statement}[section]
+
+\RequirePackage{tcolorbox}
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+\definecolor{blue}{rgb}{0.2, 0.2, 0.6}
+\newenvironment{theorem}[1][Theorem]{\begingroup \refstepcounter{statement} \begin{trivlist} \color{Maroon}\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+\newenvironment{lemma}[1][Lemma]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+\newcommand{\exercise}[1]{\textbf{Exercise #1.}}
+% \newenvironment{exercise}[2][Exercise]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}\endgroup}
+\newenvironment{reflection}[1][Reflection]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+\newenvironment{proposition}[1][Proposition]{\begingroup \refstepcounter{statement} \begin{trivlist} \color{Maroon}\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+\newenvironment{corollary}[1][Corollary]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+%\newenvironment{defn}[1][Definition]{\begingroup \refstepcounter{statement} \color{blue} \begin{trivlist}
+%\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
+
+\renewenvironment{leftbar}[1][\hsize]
+{%
+    \def\FrameCommand
+    {%
+        {\color{blue}\vrule width 2pt}%
+        \hspace{0pt}%must no space.
+        \fboxsep=\FrameSep\colorbox{Emerald!5!white}%
+    }%
+    \MakeFramed{\hsize#1}%
+}
+{\endMakeFramed}
+
+\newenvironment{defn}[2][Definition]{\begingroup\refstepcounter{statement}
+\color{blue} \leftbar{\bfseries #1 \thesection .\thestatement. (#2).}
+}{\endleftbar \endgroup}
+
+
+\theoremstyle{definition}
+\newtheorem*{rem}{Remark}
+
+\numberwithin{equation}{section}
+
+\RequirePackage{titlesec}
+\titleformat*{\subsubsection}{\bfseries\itshape}
+
+%\newenvironment{proof}{\textit{Proof:}}{\hfill$\square$}
+
+\setlength\parindent{0pt}
