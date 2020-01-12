@@ -1,3 +1,5 @@
-# MA 672: (Topics) Number Theory and Cryptography
+# MA 672: (Topics) Number Theory and Cryptography 
 
-[Link to notes (lastest version)](https://jiahuac.github.io/nt-crypto-notes/crypto-notes.pdf)
+![Badge](https://img.shields.io/github/last-commit/jiahuac/nt-crypto-notes)
+
+[Link to notes (lastest version, automatically updated)](https://jiahuac.github.io/nt-crypto-notes/crypto-notes.pdf)
