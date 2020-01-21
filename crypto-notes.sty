@@ -127,6 +127,11 @@
 \RequirePackage{titlesec}
 \titleformat*{\subsubsection}{\bfseries\itshape}
 
+\def\nicefrac#1#2{\leavevmode%
+    \raise.5ex\hbox{\small \ensuremath{#1}}%
+    \kern-.1em/\kern-.10em%
+    \lower.25ex\hbox{\small \ensuremath{#2}}}
+
 %\newenvironment{proof}{\textit{Proof:}}{\hfill$\square$}
 
 \setlength\parindent{0pt}

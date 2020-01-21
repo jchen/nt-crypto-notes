@@ -1,0 +1,172 @@
+\subsubsection*{January 21, 2020}
+\section{Rings}
+\subsection{Recap}
+Recall the characteristics of a ring: 
+\begin{itemize}
+	\item 2 operations $+$ and $\cdot$. 
+	\item Abelian group w.r.t. $+$. 
+	\item Closure under $\cdot$. 
+	\item Distributive law of multiplication over addition. 
+\end{itemize}
+Some additional characterizations of rings include: 
+\begin{itemize}
+	\item \ul{Commutative} ring with identity. 
+	\begin{itemize}
+		\item $\cdot$ has identity $1$. 
+		\item $\cdot$ is commutative. 
+	\end{itemize}
+	\item $(\R^*, \cdot)$ is an Abelian group: \ul{field}. 
+	\item If $rs=0$ implies $r=0$ or $s=0$: \ul{integral domain}. 
+	\item Integral domain and existence of a long division algorithm: \ul{Euclidian domain}. e.g. integers, polynomials. 
+	\item \ul{Ideal}: $I\subseteq R$ such that
+	\begin{itemize}
+		\item $a+b\in I\ \forall a,b\in I$. 
+		\item $ar\in I\ \forall a\in I, r\in R$. 
+	\end{itemize}
+	
+	Ex: $\langle a\rangle=\{ar:r\in R\}$ for some $a\in R$, commutative. 
+\end{itemize}
+
+\begin{defn}{Ideals}
+	Let $I$ be a proper (non-trivial) ideal in a commutative ring $R$. 
+	\begin{itemize}
+		\item $I$ is called \ul{prime ideal} if for all $a,b\in R$, $ab\in I\implies a\in I$ or $b\in I$. 
+		\item $I$ is called \ul{maximal ideal} if for all ideals $J$ with $I\subseteq J\subseteq R$, $J = I$ or $J = R$. 
+	\end{itemize}
+\end{defn}
+
+\begin{defn}{Ring Homomorphism}
+	Let $R$ and $S$ be commutative rings. A function $\phi:R\to S$ is called a \ul{ring homomorphism} if
+	\begin{equation}
+		\phi(a+b) = \phi(a) + \phi(b)
+	\end{equation}
+	and
+	\begin{equation}
+		\phi(ab) = \phi(a)\phi(b)
+	\end{equation}
+	for all $a,b\in R$. 
+	
+	A ring homomorphism that is one-to-one and onto is called an \ul{isomorphism}. If there exists an isomorphism from $R$ onto $S$, we say $R$ is isomorphic to $S$, and write $R\cong S$. 
+\end{defn}
+
+\begin{proposition}
+	Let $\phi:R\to S$ be a ring homomorphism. Then
+	\begin{enumerate}[(a)]
+		\item $\phi(0) = 0$;
+		\item $\phi(-a)=-\phi(a)$ for all $a\in R$;
+		\item If $1$ is an identity element for $R$, then $\phi(1)$ is an idempotent element of $S$. 
+		\item $\phi(R)$ is a subring of $S$. 
+	\end{enumerate}
+\end{proposition}
+\begin{proof}\!
+\begin{enumerate}[(a)]
+	\item This is true as $\phi$ is a group homomorphism. 
+	\item Similar to above. 
+	\item $\phi(1)\phi(1) = \phi(1\cdot 1) = \phi(1)$. 
+	\item $\phi(R)$ is a subgroup of $S$ by above. We now show that multiplication is well defined and distributes. 
+	\[\phi(a)\phi(b) = \phi(ab)\in\phi(R)\text{ as }ab\in R\]
+	\[\phi(a)(\phi(x) + \phi(y)) = \phi(a)\phi(x+y) = \phi(a(x+y))\]
+	\[= \phi(ax + ay) = \phi(ax) + \phi(ay) = \phi(a)\phi(x) + \phi(a)\phi(y)\in R\]
+\end{enumerate}
+\end{proof}
+\example
+Consider $\Z_n$ with
+\[[x] + [y] = [x+y]\]
+\[[x][y]=[x][y]\]
+Then $\pi: \Z\to \Z_n$ with $\pi(x) = [x]$ is a ring homomorphism. 
+\begin{proof}
+	C'mon. 
+\end{proof}
+
+\begin{proposition}
+	Let $\phi:R\to S$ be a ring homomorphism. 
+	\begin{enumerate}[(a)]
+		\item If $a, b\in \ker(\phi)$ and $r\in R$, then $a+b$, $a-b$, and $ra$ belong to $\ker(\phi)$. 
+		\item The homomorphism $\phi$ is an isomorphism if and only if $\ker(\phi) = \{0\}$ and $\phi(R) = S$. 
+	\end{enumerate}
+\end{proposition}
+\begin{proof}
+\begin{enumerate}[(a)]
+	\item If $a,b\in \ker(\phi)$, then
+	\[\phi(a\pm b) = \phi(a) \pm \phi(b) = 0 \pm 0 = 0,\]
+	and so $a\pm b\in \ker(\phi)$. If $r\in R$, then 
+	\[\phi(ra) = \phi(r) \cdot \phi(a) = \phi(r) \cdot 0 = 0,\]
+	showing that $ra\in \ker(\phi)$. 
+	\item This part follows from the fact that $\phi$ is a group homomorphism, since $\phi$ is one-to-one if and only if $\ker(\phi) = \{0\}$ and onto if and only if $\phi(R) = S$. 
+\end{enumerate}	
+\end{proof}
+
+\begin{defn}{a}
+	Let $R,S$ be commutative rings. $\varphi: R\to S$ a homomorphism. Then $\nicefrac{R}{\ker(\varphi)}=\{[r]\mid r\in R\}$ where $r\sim s$ if $r-s\in\ker(\varphi)$. (or $\varphi(r) = \varphi(s)$). 
+\end{defn}
+\begin{theorem}
+	$\nicefrac{R}{\ker(\varphi)}$ is a ring, and $\nicefrac{R}{\ker(\varphi)}\cong \mathrm{im}(\varphi)$. 
+\end{theorem}
+\begin{proof}
+	We already know $\nicefrac{R}{\ker(\varphi)}$ is an Abelian group w.r.t. $+$. 
+	
+	It is closed under multiplication: $[r][s] = [rs]$. Because $rs-rs\in \ker(\varphi)$ ($\varphi(0) = 0$), $[rs]\in \nicefrac{R}{\ker(\varphi)}$. 
+	
+	Distributive law: 
+	\begin{align*}
+		[r]([s] + [t]) &= [r][s+t] \\
+		&= [r(s+t)] \\
+		&= [rs + rt] \\
+		&= [rs] + [rt] \\
+		&= [r][s] + [r][t]
+	\end{align*}
+Consider $\psi: \nicefrac{R}{\ker(\varphi)}\to \mathrm{im}(\varphi)$ with $\psi([r]) = \varphi(r)$. 
+
+$\psi$ is a (i) ring homomorphism that is (ii) one-to-one and (iii) onto. 
+\begin{enumerate}[(i)]
+	\item $\psi([r]+[s]) = \psi([r+s]) = \varphi(r+s) = \varphi(r) + \varphi(s) = \psi([r]) + \psi([s])$. 
+	
+	We prove similarly for multiplication. 
+	\item $\psi$ is one-to-one if and only if $\ker\psi = \{[0]\}$. 
+	
+	\begin{align*}
+	\text{Suppose }\psi([r]) &= 0 \\
+	\varphi(r) &= 0 \\
+	r&\in \ker\varphi \\
+	r&\sim 0 \\
+	r&\in [0] \\
+	[r] &= [0].
+	\end{align*}
+	
+	\item Let $w\in \mathrm{im}\varphi$ such that $\varphi(r) = w$. Hence $\psi([r])=w$. 
+\end{enumerate}
+\end{proof}
+
+\exercise{1} Let $F$ be a field and let $\phi:F\to R$ be a ring homomorphism. Show that $\phi$ is either zero or one-to-one. 
+\begin{proof}
+	Let $\phi:F\to R$ be a ring homomorphism, $\phi$ not zero. 
+	
+	Then $\ker\phi\subsetneqq F$. 
+	
+	Let $a\in \ker \phi$. Let $r\in F$. 
+	\[\phi(r) = \phi(r \cdot 1) = \phi(r\cdot a\cdot a^{-1}) = \phi(r)\phi(a)\phi(a^{-1}) = 0\]
+	\[\implies r\in \ker\phi\implies \ker\phi = F \Rightarrow\!\Leftarrow\]
+\end{proof}
+
+\exercise{2} Let $F, E$ be fields, with a homomorphism $\phi: F\to E$. Show that if $\phi$ is onto, then $\phi$ must also be an isomorphism. 
+
+\begin{proof}
+	This follows directly from Exercise 1. 
+\end{proof}
+
+
+\exercise{3} Show that taking complex conjugates defines an automorphism of $\C$. That is, for $z\in \C$, define $\phi(z) = \overline{z}$, and show that $\phi$ is an automorphism. 
+\begin{proof}
+	(***)
+\end{proof}
+
+\exercise{4} Show that the only ring automorphism of $\Z$ is the identity mapping. 
+\begin{proof}
+	Since $\varphi(1)$ is idempotent, $\varphi(1) = 1$ as $1$ is the only non-trivial idempotent integer. We also note that $\varphi(-1) = -\varphi(1) = -1$ and $\varphi(0) = 0$ by group homomorphism. Then we can induct in both directions \textit{to infinity and beyond}. (***)
+\end{proof}
+
+\exercise{5} Let $R$ be a commutative ring with identity, and let $D$ be an integral domain. Show that $\phi(1) = 1$ for any nonzero ring homomorphism $\phi:R\to D$. 
+\begin{proof}
+	(***)
+\end{proof}
+
