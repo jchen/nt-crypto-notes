@@ -1,6 +1,6 @@
 \subsubsection*{January 10, 2020}
 
-\exercise{4} Show that a non-Abelian group must have at least five distinct elements. 
+\exercise Show that a non-Abelian group must have at least five distinct elements. 
 \begin{proof}
 $1$ element is trivial. $2$ and $3$ are primes so all groups of order $2$ or $3$ are cyclic. So we turn to groups of order $4$. Every element cannot have order $1$, and shown previously the orders have to divide $4$. Additionally, if an element has order $4$, then it is a generator and the group is cyclic. So all non-trivial elements must have order $2$. We can construct a Cayley table for this specific group. 
 
@@ -16,7 +16,7 @@ $c$     & $c$ & $b$ & $a$ & $e$
 Which gives us an Abelian group. 
 \end{proof}
 
-\exercise{5} Let $G$ be a group. Prove that $(ab)^n=a^nb^n$ for all $a, b\in G$ and all $n\in \Z$ if an only if $G$ is Abelian. 
+\exercise Let $G$ be a group. Prove that $(ab)^n=a^nb^n$ for all $a, b\in G$ and all $n\in \Z$ if an only if $G$ is Abelian. 
 \begin{proof}
 The left implication is trivial (rearrange). We focus on the right implication. 
 
@@ -30,7 +30,7 @@ ba &= ab
 For all $a,b\in G$. 
 \end{proof}
 
-\exercise{6} Let $G$ be a group. Prove that $G$ is Abelian if and only if $(ab)^{-1}=a^{-1}b^{-1}$ for all $a,b\in G$. 
+\exercise Let $G$ be a group. Prove that $G$ is Abelian if and only if $(ab)^{-1}=a^{-1}b^{-1}$ for all $a,b\in G$. 
 \begin{proof}
 \begin{align*}
 	(ab)^{-1}&=a^{-1}b^{-1} \\
@@ -40,7 +40,7 @@ For all $a,b\in G$.
 We can travel in both directions in this proof. 
 \end{proof}
 
-\exercise{7} Let $G$ be a group. Prove that if $x^2 = e$ for all $x\in G$, then $G$ is Abelian. 
+\exercise Let $G$ be a group. Prove that if $x^2 = e$ for all $x\in G$, then $G$ is Abelian. 
 \begin{proof}
 We use the fact that $x^{-1}=e$ for all $x\in G$. Then we use the conclusion arrived at \textit{Exercise 6} to our advantage. 
 \begin{align*}
@@ -50,12 +50,12 @@ ab &= ab \\
 	Which is as desired. 
 \end{proof}
 
-\exercise{8} Show that if $G$ is a finite group with an even number of elements, then there must exist an element $a\in G$ with $a\neq e$ such that $a^2 = e$. 
+\exercise Show that if $G$ is a finite group with an even number of elements, then there must exist an element $a\in G$ with $a\neq e$ such that $a^2 = e$. 
 \begin{proof}
 Assume otherwise, that except for the identity, we can pair elements off such that their inverse isn't themselves. This gives us pairs and the identity, which means the group has an odd number of elements. So there has to be an element whose inverse is itself. 	
 \end{proof}
 
-\exercise{9} Let $G$ be a group, and let $a\in G$. The set $C(a)=\{x\in G\mid xa=ax\}$ of all elements of $G$ is called the \ul{centralizer} of $a$. 
+\exercise Let $G$ be a group, and let $a\in G$. The set $C(a)=\{x\in G\mid xa=ax\}$ of all elements of $G$ is called the \ul{centralizer} of $a$. 
 \begin{enumerate}[(a)]
 	\item Show that $C(a)$ is a subgroup of $G$. 
 	

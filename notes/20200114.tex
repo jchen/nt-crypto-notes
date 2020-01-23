@@ -1,6 +1,6 @@
 \subsubsection*{January 14, 2020}
 
-\exercise{13}
+\exercise
 
 \begin{enumerate}[(a)]
 	\item Write down the formulas for all homomorphisms from $\Z_6$ into $\Z_9$. 
@@ -19,7 +19,7 @@
 	We can attempt to solve this problem in the general sense, classifying all homomorphisms from $\Z_m$ to $\Z_n$. Realize that the generator of the kernel in $\Z_{24}$ must get sent to $0$, i.e. $\equiv 0\mod 18$. This means that any generator must be a common divisor of $24$ and $18$, of which there are $1, 2, 3, $ and $6$. We construct the homomorphism by creating $\varphi(m)=km, k=\frac{18}{g}$ where $g$ is a generator for the kernel. We can extend this to $m$ and $n$. 
 \end{enumerate}
 
-\exercise{14} Show that $\phi_3: \Z_3\to \Z_3$ defined by $\phi_3([x])=[x]^3$ and $\phi_5: \Z_5\to \Z_5$ defined by $\phi_5([x])=[x]^5$ are homomorphisms but $\phi_4: \Z_4\to \Z_4$ defined by $\phi_4([x])=[x]^4$ is not. 
+\exercise Show that $\phi_3: \Z_3\to \Z_3$ defined by $\phi_3([x])=[x]^3$ and $\phi_5: \Z_5\to \Z_5$ defined by $\phi_5([x])=[x]^5$ are homomorphisms but $\phi_4: \Z_4\to \Z_4$ defined by $\phi_4([x])=[x]^4$ is not. 
 
 \begin{proof}
 	We can use the freshman dream lemma: 
@@ -27,21 +27,21 @@
 	Which makes any $\phi_p$ a homomorphism. 
 \end{proof}
 
-\exercise{15} Let $G$ be an Abelian group, and let $n$ be any positive integer. Show that the function $\phi:G\to G$ defined by $\varphi(x)=nx$ is a homomorphism. 
+\exercise Let $G$ be an Abelian group, and let $n$ be any positive integer. Show that the function $\phi:G\to G$ defined by $\varphi(x)=nx$ is a homomorphism. 
 
 \begin{proof}
 	We write
 	\[\varphi(x)+\varphi(y) = nx + ny = \underbrace{x + \cdots + x}_{n\ \text{times}} + \underbrace{y + \cdots + y}_{n\ \text{times}} = \underbrace{(x+y) + \cdots + (x+y)}_{n\ \text{times}}=\varphi(x + y)\]
 \end{proof}
 
-\exercise{16} Show that $\varphi:\C^\times \to \R^\times$ defined by $\varphi(a+bi) = a^2+b^2$ is a homomorphism. 
+\exercise Show that $\varphi:\C^\times \to \R^\times$ defined by $\varphi(a+bi) = a^2+b^2$ is a homomorphism. 
 
 \begin{proof}
 We can write it in $e^{i\theta}$ form to make out life easier (otherwise it's algebra and a lot of foiling). 
 \[\varphi(re^{i\alpha}se^{i\beta}) = \varphi(rs e^{i(\alpha+\beta)})=r^2s^2\]	
 \end{proof}
 
-\exercise{17} Let $\phi$ be a group homomorphism of $G_1$ onto $G_2$. Prove that: 
+\exercise Let $\phi$ be a group homomorphism of $G_1$ onto $G_2$. Prove that: 
 
 \begin{enumerate}
 	\item If $G_1$ is Abelian then so if $G_2$. 
@@ -76,7 +76,7 @@ gHg^{-1}\subseteq H
 
 Let's do a quick exercise that involves normal subgroups: 
 
-\exercise{18}
+\exercise
 Recall that the center of a group $G$ is $\{x\in G\mid xg=gx\text{ for all }g\in G\}$. Prove that the center of any group is a normal subgroup. 
 
 \begin{proof}

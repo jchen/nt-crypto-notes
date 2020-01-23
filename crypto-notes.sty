@@ -94,7 +94,8 @@
 \definecolor{blue}{rgb}{0.2, 0.2, 0.6}
 \newenvironment{theorem}[1][Theorem]{\begingroup \refstepcounter{statement} \begin{trivlist} \color{Maroon}\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
 \newenvironment{lemma}[1][Lemma]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
-\newcommand{\exercise}[1]{\textbf{Exercise #1.}}
+%\newcommand{\exercise}[1]{\textbf{Exercise #1.}}
+\newcommand{\exercise}{\stepcounter{ex}\textbf{Exercise \theex.} }
 % \newenvironment{exercise}[2][Exercise]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}\endgroup}
 \newenvironment{reflection}[1][Reflection]{\begingroup \refstepcounter{statement} \begin{trivlist} \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
 \newenvironment{proposition}[1][Proposition]{\begingroup \refstepcounter{statement} \begin{trivlist} \color{Maroon}\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries \thesection .\thestatement.}]}{\end{trivlist}\endgroup}
@@ -118,11 +119,18 @@
 \color{blue} \leftbar{\bfseries #1 \thesection .\thestatement. (#2).}
 }{\endleftbar \endgroup}
 
+\def\smallunderbrace#1{\mathop{\vtop{\m@th\ialign{##\crcr
+   $\hfil\displaystyle{#1}\hfil$\crcr
+   \noalign{\kern3\p@\nointerlineskip}%
+   \tiny\upbracefill\crcr\noalign{\kern3\p@}}}}\limits}
+
 
 \theoremstyle{definition}
 \newtheorem*{rem}{Remark}
 
 \numberwithin{equation}{section}
+\newcounter{ex}
+\counterwithin*{ex}{section}
 
 \RequirePackage{titlesec}
 \titleformat*{\subsubsection}{\bfseries\itshape}
