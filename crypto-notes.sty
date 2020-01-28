@@ -31,6 +31,9 @@
   bottom=1.3in,
   headsep=2ex,
   foot=36pt}
+  
+\RequirePackage[cache=false,outputdir=.texpadtmp]{minted}
+\usemintedstyle{mathematica}
 
 \RequirePackage[bottom]{footmisc}
 
@@ -44,7 +47,7 @@
 % \cfoot{\small{\textsc{p. \thepage}}}
 
 \RequirePackage{hyperref}
-\hypersetup{ colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black }
+\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
 
 \RequirePackage{tkz-euclide,tikz}
 \usetkzobj{all}
@@ -65,9 +68,10 @@
 \newcommand{\Jf}{\bm{Jf}}
 
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\F}{\mathbb{F}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
+\newcommand{\Complex}{\mathbb{C}}
 \newcommand{\V}[1]{\ensuremath{\Vec{#1}}}
 \newcommand{\Point}[1]{\ensuremath{\begin{pmatrix} #1 \end{pmatrix}}}
 \newcommand{\mtrx}[1]{\renewcommand{\arraystretch}{1.0}\ensuremath{\begin{bmatrix} #1 \end{bmatrix}}\renewcommand{\arraystretch}{1.2}}
