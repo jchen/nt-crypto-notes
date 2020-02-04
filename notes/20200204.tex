@@ -1,0 +1,48 @@
+\subsubsection*{February 4, 2020}
+\section{Primality Testing}
+\begin{theorem}\textbf{(Fermat's Little Theorem).}
+	\begin{equation}
+		a^{p-1}\equiv 1\pmod{p}
+	\end{equation}
+\end{theorem}
+
+\ul{Note:} We let $\F_p$ denote the field that is $\Z_p$ under addition and $\Z_p^*$ under multiplication. 
+
+In $\F_p$, FlT can be written as
+\begin{equation}
+	[a]^{p-1}=1
+\end{equation}
+and it can be proved easily using group theory: 
+
+\begin{proof}
+Consider $\langle a\rangle$ in $\F_p$. 
+\begin{align*}
+	\text{Then }\mathrm{ord}(a) &= \text{smallest integer $n$ such that $a^n=1$} \\
+	&= \text{order of $\langle a\rangle$}
+\end{align*}
+Since there are $p-1$ elements in $\Z_p^*$, $\mathrm{ord}(a)\mid p-1$. Hence $\exists k$ such that $\mathrm{ord}(a)\cdot k=p-1$. Therefore $a^{p-1}=a^{\mathrm{ord}(a)\cdot k}=\left(a^{\mathrm{ord}(a)} \right)^k =1^k = 1$. 
+\end{proof}
+
+\begin{defn}{Witness}
+	If $p$ is not a prime, it is not necessarily true that $a^{p-1}\equiv 1\pmod(p)$. In that case we call ``$a$'' a \ul{witness} for the compositeness of $p$. 
+\end{defn}
+
+This could be used for primality checking if it weren't for the fact that some composite numbers don't have any witnesses: 
+\[a^{p-1}\equiv 1\pmod{p}\]
+even though $p$ is not a prime. These are called ``Carmichael numbers''. 
+
+Miller-Rabin is a test for compositeness in which each composite number has a lot of witnesses. While not waterproof, it can be used to check for primality by applying it to a large number of potential witnesses. Each time the test fails, it strengthens the evidence for $p$ being prime. 
+
+\begin{proposition}
+	Let $p$ be an odd prime and write
+	\[p-1=2^kq\qquad\text{\textit{with $q$ odd.}}\]
+	Let $a$ be any number not disivible by $p$. Then one of the following two assertions is true: 
+	\begin{enumerate}[(i)]
+		\item $a^q$ is congruent to $1$ modulo $p$. 
+		\item One of $a^q, a^{2q}, a^{4q}, \dots, a^{2^{k-1}q}$ is congruent to $-1$ modulo $p$. 
+	\end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+	Let $n$ be an odd composite number. Then at least $75\%$ of the numbers $a$ between $1$ and $n-1$ are Miller-Rabin witnesses for $n$. 
+\end{proposition}
