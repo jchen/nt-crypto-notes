@@ -1,0 +1,36 @@
+\subsubsection*{February 13, 2020}
+\section{Public-Key Cryptography}
+There are 3 players: Alice, Bob, and Eve. 
+
+Bob sends a message to Alice, which is `eavesdropped' by Eve. 
+
+Mathematically, given a message $m\in \F_p$, there needs to be a $1-1$ encryption function $e:\F_p\to \F_p$ and a decryption function $d:\F_p\to \F_p$ with $d(e(m))=m$. 
+
+The functions must have the property that $e(m)$ is easy to compute but $d(x)$ is hard to compute \ul{unless} you have an additional piece of information, the ``key.'' 
+
+Solution: Encrypt with ``public key'', decrypt with ``private key.'' 
+
+\subsection{ElGamal}
+Elgamal uses the fact that it is (currently) very difficult to calculate discrete logarithms in $\F_p$. 
+
+\begin{theorem}
+	\textbf{(Primitive Root Theorem).} $\F_p^*$ is a cyclic group for every prime $p$. 
+\end{theorem}
+
+\begin{defn}{Discrete Logarithm}
+	Given $g\in \F_p$ a primitive root (i.e. generator) and $a\in \F_p$, such that $a=g^n$, $n\in Z$, we say
+	\begin{equation}
+		n=\log_g(a).
+	\end{equation}
+	By F.$\ell$.T., if $n_0$ staisfies $a=g^{n_0}$, then so does $n=n_0+(p-1)k$. We shall pick the unique solution of $n$ in $\Z_{p-1}$ for the logarithm. 
+\end{defn}
+
+Note: It is easy to calculate $g^n\pmod{p}$ using fast powering. But, apart from some exceptions, it is ``hard'' to find $\log_g a$ (not significantly more efficient than brute force). 
+
+The method: Let $p$ be a large prime and $g\in \F_p$, suitably chosen. There is no secret in $p$ or $g$, and they can, in fact, be provided by a trusted authority. 
+
+Alice chooses a private key $a\in \F_p$, and calculates $A\equiv g^a\pmod{p}$, which she puts on her business card. 
+
+Bob wants to send $m\in \F_p$ to Alice. So he calculates $C_1=g^k$, $C_2=mA^k$ for some arbitrary $k\in Z$. $k$ is called an ephemeral key, because it is used only once. Alice receives $C_1, C_2$ and calculates $X\equiv C_1^a\pmod{p}$ and thus $X^{-1}\pmod{p}$. Finally, she will obtain $m = C_2X^{-1}$. 
+
+Eve will know $p, g, C_1, C_2$, and $A$ but she needs to solve $A=g^a\pmod{p}$ to decrypt the message, 
