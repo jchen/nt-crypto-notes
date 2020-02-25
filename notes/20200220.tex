@@ -1,0 +1,12 @@
+\subsubsection*{February 20, 2020}
+\begin{theorem}
+	Let $p$ be a prime, and $q$ a prime factor of $p-1$. Let $a\in \F_p$ and set $b=a^{\frac{p-1}{q}}$. Then either $b=1$ or $b$ is an element of order $q$. 
+\end{theorem}
+\begin{proof}
+	We rewrite
+	\[b^q\equiv 1\pmod{p} \]
+	If $q$ is the order, then we are done. Otherwise, suppose there is an order $q'<q$. We use the division algorithm on $q$ and $q'$ to get
+	\[q=kq'+r\qquad r< q', q'\not\mid q\]
+	Then $b^q = (b^{q'})^k\cdot b^r=b^r$, so $b^r=1$ which is a contradiction. 
+\end{proof}
+

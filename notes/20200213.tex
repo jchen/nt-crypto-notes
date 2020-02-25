@@ -33,4 +33,4 @@ Alice chooses a private key $a\in \F_p$, and calculates $A\equiv g^a\pmod{p}$, w
 
 Bob wants to send $m\in \F_p$ to Alice. So he calculates $C_1=g^k$, $C_2=mA^k$ for some arbitrary $k\in Z$. $k$ is called an ephemeral key, because it is used only once. Alice receives $C_1, C_2$ and calculates $X\equiv C_1^a\pmod{p}$ and thus $X^{-1}\pmod{p}$. Finally, she will obtain $m = C_2X^{-1}$. 
 
-Eve will know $p, g, C_1, C_2$, and $A$ but she needs to solve $A=g^a\pmod{p}$ to decrypt the message, 
+Eve will know $p, g, C_1, C_2$, and $A$ but she needs to solve $A=g^a\pmod{p}$ to decrypt the message. 

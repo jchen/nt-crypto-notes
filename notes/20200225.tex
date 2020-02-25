@@ -1,0 +1,65 @@
+\subsubsection*{February 25, 2020}
+\section{Constructing Finite Fields for Cryptography}
+\subsection{Groups}
+We've worked with groups: 
+\begin{itemize}
+	\item Subgroups
+	\item Quotient groups
+	\item Group homomorphisms
+\end{itemize}
+\begin{list}{$*$}{}  
+	\item Lagrange's Thm
+	\item Fundamental Homomorphism Theorem ($\nicefrac{G}{\ker \varphi}\cong \mathrm{im} \varphi$)
+\end{list}
+\begin{list}{$\circ$}{}  
+	\item $\Z_n$
+	\item Symmetry Groups
+	\item Permutation Groups 
+\end{list}
+
+\subsection{Rings}
+Ring = Abelian group + second operation.
+\begin{itemize}
+	\item Ideals (prime, maximal, principal)
+	\item Quotient rings $\nicefrac{R}{I}$. 
+	\item Ring homomorphisms. 
+\end{itemize}
+\begin{list}{$*$}{}  
+	\item Fundamental homomorphism theorem for rings. 
+	\item Connection between ideals and units. 
+	\item Modding out a maximal ideal gives a field. 
+	\item In a p.i.d., maximal ideals $\iff$ prime ideals. 
+\end{list}
+
+\subsection{Fields}
+Fields = Abelian group under $+$ and $\times$. 
+\begin{itemize}
+	\item Take $F[x]$ (polynomials with coefficients in field $F$. 
+	\item Take irreducible $p(x)\in F[x]$
+	\item Construct $\nicefrac{F[x]}{\langle p(x)\rangle}$
+\end{itemize}
+This extends our collection f fields beyond $F_p$, $p$ prime and it allows for the extension of fields by ``adding'' roots of polynomials that weren't in the base field. 
+\begin{list}{$\circ$}{}  
+	\item Galois fields
+\end{list}
+
+\subsection{What will be on the test? }
+\begin{itemize}
+	\item Check definitions. (Checking that $\heartsuit$ is $\spadesuit$)
+	\item Construct an isomorphism. (Show that $\heartsuit$ is isomorphic to $\spadesuit$)
+	\item Construct a field by giving $+$ and $\times$ table. (``I raise you $\Z_p$ and $p(x)\in \Z_p[x]$, give me the field $(\Z_p)_{\langle p(x)\rangle}$!'')
+\end{itemize}
+
+\exercise Let $C_2$ be the subgroup $\{\pm 1\}$ of the multiplicative group $\R^\times$. Show that $\R^times$ is isomorphis to $\R^+ \times C_2$. 
+
+We can construct isomorphism
+\[\varphi: (x, u) \mapsto u\cdot e^x\qquad \varphi^{-1}:a\mapsto (\ln|a|, \mathrm{sgn}(a))\]
+We check that is it a homomorphism first: 
+\begin{align*}
+	\varphi\big((x_1, u_1)\times (x_2, u_2)\big)&=\varphi\big((x_1+x_2, u_1u_2)\big) \\
+	&=u_1u_2e^{x_1+x_2}=u_1e^{x_1}u_2e^{x_2} = \varphi\big((x_1,u_1)\big)\varphi\big((x_2,u_2)\big)
+\end{align*}
+1-1: Check that $\ker\varphi=\{(0,1)\}$
+
+onto: Which input gives me $y\in \R^{\times}$? 
+\[\varphi(\underbrace{\ln|a|}_{\in \R^+}, \underbrace{\mathrm{sgn}(a)}_{\in\{\pm 1\}}) = \mathrm{sgn}(y)\cdot |y| = y\implies\text{onto}\]
