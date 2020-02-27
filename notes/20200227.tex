@@ -1,0 +1,40 @@
+\subsubsection*{February 27, 2020}
+\exercise Let $\F$ be a finite field. 
+
+\begin{enumerate}[(a)]
+	\item Prove that there exists an integer $m\geq 1$ such that if we add $1$ to itself $m$ times
+	\[\underbrace{1+1+\cdots +1}_{\text{$m$ ones}},\]
+	then we get $0$. Note that $1$ and $0$ are the multiplicative and additive identity elements of the field $\F$. 
+	
+	\item Let $m$ be the smallest positive integer with the property described in (a). Prove that $m$ is prime. 
+	\item Let $p$ be the characteristic of $\F$. Prove that $\F$ is a finite-dimensional vector space over the field $\F_p$ of $p$ elements. 
+	
+	Define $\alpha=[k]\in \F_p$ and $x\in \F$. We can prove that the operation
+	\[\alpha x = kx = \underbrace{x+\cdots+x}_{\text{$k$ times}} = x\cdot(\underbrace{1_{\F}+\cdots+1_{\F}}_{\text{$k$ times}})\]
+	We prove vector space qualities: 
+	\begin{enumerate}[1.]
+		\item $(\alpha\beta)x = \alpha(\beta x)$
+		\begin{align*}
+			\alpha(\beta x) &= \alpha(\underbrace{1 + \cdots + 1}_{\text{$\beta$ times}}) \\
+			&= \underbrace{1 + \cdots + 1}_{\text{$\beta$ times}}
+		\end{align*}
+		\item $(\alpha + \beta)x = \alpha x + \beta x$
+		\item $\alpha(x + y) = \alpha x + \alpha y$
+		\item $1\cdot x = x$
+	\end{enumerate}
+	
+	\item Use (c) to deduce that $\F$ has $p^d$ elements for some $d\geq 1$. 
+\end{enumerate}
+
+\exercise You have a ring $\R[x]$. Let $Y$ be a finite subset of $\R$. Define
+\[I(Y)=\{p(x)\in R\mid p(x_1)=0 \text{ for all }x_i\in Y\}\]
+Show that $I(Y)$ is an ideal in $\R[x]$. 
+\begin{proof}
+	Consider $p(x), q(x)\in I(Y)$. This means that $p(x)=0$ and $q(x)=0$ for all $x\in Y$ thus $p(x) + q(x) = 0$ for all $x\in Y$ so $p(x) + q(x)\in I(Y)$. 
+	
+	Consider $a(x) \in \R[x]$ and $p(x)\in I(Y)$. $a(x)p(x)=0$ for all $x\in Y$ as $p(x)=0$ for all $x\in Y$. 
+\end{proof}
+
+\exercise If $I,J$ are ideals of $R$, $I+J$ is an ideal of $R$. 
+\[I+J=\{a+b\in R\mid a\in I, b\in J\}\]
+
